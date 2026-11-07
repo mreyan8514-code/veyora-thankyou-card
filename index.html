@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -344,32 +343,26 @@ button {
 /* TABLETS */
 
 @media (max-width: 600px) {
-
   body {
     padding: 15px 8px;
   }
-
   #card {
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
   }
-
   .corner {
     width: 65px;
     height: 65px;
   }
-
   .laurel {
     opacity: .35;
   }
-
   .message {
     max-width: 94%;
     font-size: clamp(12px, 3.2vw, 17px);
     line-height: 1.4;
   }
-
   .ribbon {
     width: 94%;
     padding: 9px 25px;
@@ -380,69 +373,55 @@ button {
 /* MOBILE */
 
 @media (max-width: 390px) {
-
   body {
     padding: 10px 6px;
   }
-
   h2 {
     font-size: 17px;
     letter-spacing: 1px;
   }
-
   .panel {
     padding: 15px;
   }
-
   #card {
     width: 100%;
     padding: 4% 4%;
     border-width: 2px;
   }
-
   #card:before {
     inset: 8px;
   }
-
   .corner {
     width: 48px;
     height: 48px;
   }
-
   .tl { top: 9px; left: 9px; }
   .tr { top: 9px; right: 9px; }
   .bl { bottom: 9px; left: 9px; }
   .br { bottom: 9px; right: 9px; }
-
   .emblem {
     width: 72px;
     max-height: 75px;
     margin-bottom: 4px;
   }
-
   .brand {
     font-size: clamp(23px, 7vw, 30px);
     letter-spacing: 4px;
   }
-
   .subtitle {
     font-size: 9px;
     letter-spacing: 2px;
   }
-
   .laurel {
     opacity: .22;
     width: 12%;
   }
-
   .customer {
     font-size: clamp(17px, 5vw, 23px);
   }
-
   .thanks {
     font-size: clamp(42px, 12vw, 57px);
   }
-
   .message {
     width: 100%;
     max-width: 100%;
@@ -450,24 +429,20 @@ button {
     font-size: clamp(11px, 3.4vw, 13px);
     line-height: 1.4;
   }
-
   .orderbox {
     width: 88%;
     font-size: 13px;
     padding: 7px 3px;
   }
-
   .ribbon {
     width: 96%;
     max-width: 100%;
     padding: 8px 23px;
     font-size: 12px;
   }
-
   .ending {
     font-size: 15px;
   }
-
   .ornament {
     height: 12px;
   }
@@ -476,27 +451,22 @@ button {
 /* VERY SMALL PHONES */
 
 @media (max-width: 340px) {
-
   #card {
     padding-left: 3%;
     padding-right: 3%;
   }
-
   .message {
     font-size: 11px;
   }
-
   .corner {
     width: 40px;
     height: 40px;
   }
-
   .ribbon {
     width: 96%;
     padding: 8px 20px;
     font-size: 11px;
   }
-
   .thanks {
     font-size: 40px;
   }
@@ -511,7 +481,6 @@ button {
 <!-- ADMIN LOGIN -->
 
 <div class="panel" id="login">
-
   <h3>Private Admin Login</h3>
 
   <label>Email</label>
@@ -523,21 +492,18 @@ button {
   <button onclick="login()">Login</button>
 
   <p id="loginStatus"></p>
-
 </div>
 
 <!-- ADMIN PANEL -->
 
 <div id="app">
-
   <div class="panel">
-
     <h3>Edit Customer Card</h3>
 
-    <label>Customer Name</label>
-    <input id="customer" value="Mr. Ahmed">
+    <label>Customer Name (Khali chorne par hide ho jaye ga)</label>
+    <input id="customer" value="Mr. Ahmed" placeholder=" jaise: Mr. Ahmed ya khali chor dein">
 
-    <label>Order Word</label>
+    <label>Order Word (Jaise: another, 1st, 2nd)</label>
     <input id="word" value="another">
 
     <label>Total Orders</label>
@@ -550,15 +516,12 @@ button {
     <button onclick="logout()">Logout</button>
 
     <p id="status"></p>
-
   </div>
 
   <!-- CARD DESIGN -->
 
   <div id="card">
-
     <!-- CORNERS -->
-
     <div class="corner tl">
       <svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
         <path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
@@ -588,7 +551,6 @@ button {
     </div>
 
     <!-- LEFT LEAVES -->
-
     <svg class="laurel left" viewBox="0 0 100 300" fill="none" stroke="#c69a50" stroke-width="2">
       <path d="M75 290Q15 150 65 10"/>
       <g fill="#c69a50">
@@ -602,7 +564,6 @@ button {
     </svg>
 
     <!-- RIGHT LEAVES -->
-
     <svg class="laurel right" viewBox="0 0 100 300" fill="none" stroke="#c69a50" stroke-width="2">
       <path d="M75 290Q15 150 65 10"/>
       <g fill="#c69a50">
@@ -616,19 +577,15 @@ button {
     </svg>
 
     <!-- VEYORA LOGO -->
-
     <div class="brandblock">
-
       <img
         src="WhatsApp%20Image%202026-10-04%20at%2010.21.20%20PM.jpeg"
         class="emblem"
         alt="VEYORA Original Logo"
         crossorigin="anonymous"
       >
-
       <div class="brand">VEYORA</div>
       <div class="subtitle">— MAYU WORLD —</div>
-
     </div>
 
     <div class="ornament"><span>✦</span></div>
@@ -665,114 +622,78 @@ button {
       With Love,<br>
       <b>Team Veyora ♥</b>
     </div>
-
   </div>
 </div>
 
 <script>
-
 // SUPABASE SETTINGS
+const SUPABASE_URL = "https://equvzrewhfdehksmquhg.supabase.co";
+const SUPABASE_KEY = "sb_publishable_zkSKYvb3oKyHGXjMurHUpA_cfYo1kpD";
 
-const SUPABASE_URL =
-"https://equvzrewhfdehksmquhg.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_zkSKYvb3oKyHGXjMurHUpA_cfYo1kpD";
-
-const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let currentUser = null;
 
-
 // LOGIN
-
 async function login() {
-
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const result = await db.auth.signInWithPassword({
-    email,
-    password
-  });
+  const result = await db.auth.signInWithPassword({ email, password });
 
   if (result.error) {
-    document.getElementById("loginStatus").textContent =
-      result.error.message;
+    document.getElementById("loginStatus").textContent = result.error.message;
     return;
   }
 
   currentUser = result.data.user;
-
   document.getElementById("login").style.display = "none";
   document.getElementById("app").style.display = "block";
-
   updateCard();
 }
 
-
 // LOGOUT
-
 async function logout() {
-
   await db.auth.signOut();
-
   currentUser = null;
-
   document.getElementById("app").style.display = "none";
   document.getElementById("login").style.display = "block";
 }
 
-
-// UPDATE CARD
-
+// UPDATE CARD (Dynamic Names, Words, and Numbers update)
 function updateCard() {
-
   const name = document.getElementById("customer").value.trim();
   const word = document.getElementById("word").value.trim();
   const orders = document.getElementById("orders").value;
 
-  document.getElementById("previewName").textContent =
-    "Dear " + (name || "Customer");
+  const nameEl = document.getElementById("previewName");
+  
+  if (name) {
+    // Agar name likha hai toh "Dear " ke sath show ho ga (agar pehle se Dear likha ho toh duplicate nahi hoga)
+    nameEl.textContent = name.toLowerCase().startsWith("dear") ? name : "Dear " + name;
+    nameEl.style.display = "block";
+  } else {
+    // Agar box khali chor dein ge toh name line card se bilkul gayab (hide) ho jaye gi
+    nameEl.textContent = "";
+    nameEl.style.display = "none";
+  }
 
-  document.getElementById("previewWord").textContent =
-    word || "another";
-
-  document.getElementById("previewOrders").textContent =
-    orders || "1";
+  document.getElementById("previewWord").textContent = word || "another";
+  document.getElementById("previewOrders").textContent = orders || "1";
 }
 
-
-// SAVE TO DATABASE
-
+// SAVE TO DATABASE (Matches 'thank_you_cards' table)
 async function saveCard() {
-
   if (!currentUser) {
-    document.getElementById("status").textContent =
-      "Please log in again.";
+    document.getElementById("status").textContent = "Please log in again.";
     return;
   }
 
-  const customer_name =
-    document.getElementById("customer").value.trim();
+  const customer_name = document.getElementById("customer").value.trim();
+  const order_word = document.getElementById("word").value.trim();
+  const total_orders = Number(document.getElementById("orders").value);
 
-  const order_word =
-    document.getElementById("word").value.trim();
-
-  const total_orders =
-    Number(document.getElementById("orders").value);
-
-  if (
-    !customer_name ||
-    !order_word ||
-    !Number.isInteger(total_orders) ||
-    total_orders < 1
-  ) {
-    document.getElementById("status").textContent =
-      "Please enter valid details.";
+  if (!order_word || !Number.isInteger(total_orders) || total_orders < 1) {
+    document.getElementById("status").textContent = "Please enter valid details.";
     return;
   }
 
@@ -780,32 +701,24 @@ async function saveCard() {
     .from("thank_you_cards")
     .insert({
       owner_id: currentUser.id,
-      customer_name,
+      customer_name: customer_name || "Valued Customer",
       order_word,
       total_orders
     });
 
-  document.getElementById("status").textContent =
-    error ? error.message : "Card saved successfully!";
+  document.getElementById("status").textContent = error ? error.message : "Card saved successfully!";
 }
 
-
 // CREATE PNG
-
 async function makeImage() {
-
   updateCard();
-
   const card = document.getElementById("card");
-
   await document.fonts.ready;
 
   const images = Array.from(card.querySelectorAll("img"));
-
   await Promise.all(
     images.map(img => {
       if (img.complete) return Promise.resolve();
-
       return new Promise(resolve => {
         img.onload = resolve;
         img.onerror = resolve;
@@ -825,111 +738,70 @@ async function makeImage() {
   });
 }
 
-
 // DOWNLOAD PNG
-
 async function downloadCard() {
-
   try {
-
     const blob = await makeImage();
-
     if (!blob) {
-      document.getElementById("status").textContent =
-        "PNG could not be created.";
+      document.getElementById("status").textContent = "PNG could not be created.";
       return;
     }
 
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-
     a.href = url;
     a.download = "Veyora-Thank-You.png";
-
     document.body.appendChild(a);
     a.click();
     a.remove();
-
     setTimeout(() => URL.revokeObjectURL(url), 2000);
 
-    document.getElementById("status").textContent =
-      "PNG downloaded successfully!";
-
+    document.getElementById("status").textContent = "PNG downloaded successfully!";
   } catch (error) {
-
-    document.getElementById("status").textContent =
-      "Download error: " + error.message;
-
+    document.getElementById("status").textContent = "Download error: " + error.message;
   }
 }
 
-
 // WHATSAPP SHARE
-
 async function shareCard() {
-
   try {
-
     const blob = await makeImage();
-
     if (!blob) {
-      document.getElementById("status").textContent =
-        "PNG could not be created.";
+      document.getElementById("status").textContent = "PNG could not be created.";
       return;
     }
 
-    const file = new File(
-      [blob],
-      "Veyora-Thank-You.png",
-      { type: "image/png" }
-    );
+    const file = new File([blob], "Veyora-Thank-You.png", { type: "image/png" });
 
-    if (
-      navigator.canShare &&
-      navigator.canShare({ files: [file] })
-    ) {
-
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
       await navigator.share({
         files: [file],
         title: "Thank You from Veyora",
         text: "With love, Team Veyora"
       });
-
     } else {
-
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-
       a.href = url;
       a.download = "Veyora-Thank-You.png";
-
       document.body.appendChild(a);
       a.click();
       a.remove();
-
       setTimeout(() => URL.revokeObjectURL(url), 2000);
 
       window.open(
-        "https://wa.me/?text=" +
-        encodeURIComponent("Thank you for shopping with Veyora! ❤️"),
+        "https://wa.me/?text=" + encodeURIComponent("Thank you for shopping with Veyora! ❤️"),
         "_blank"
       );
 
-      document.getElementById("status").textContent =
-        "PNG downloaded. Attach it in WhatsApp to send the card.";
-
+      document.getElementById("status").textContent = "PNG downloaded. Attach it in WhatsApp to send the card.";
     }
-
   } catch (error) {
-
     if (error.name !== "AbortError") {
-      document.getElementById("status").textContent =
-        "Share error: " + error.message;
+      document.getElementById("status".textContent) = "Share error: " + error.message;
     }
-
   }
 }
-
 </script>
 
 </body>
