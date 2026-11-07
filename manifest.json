@@ -1,0 +1,19 @@
+
+{
+  "name": "VEYORA | Thank You Studio",
+  "short_name": "VEYORA",
+  "description": "Veyora Thank You Card Studio",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#100e0b",
+  "theme_color": "#100e0b",
+  "icons": [
+    {
+      "src": "./WhatsApp%20Image%202026-11-07%20at%206.03.28%20PM.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
