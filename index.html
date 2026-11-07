@@ -101,14 +101,14 @@ button {
   font-size: 14px;
 }
 
-/* THANK YOU CARD - PERFECT FIT FOR MOBILE & LAPTOP */
+/* THANK YOU CARD - FIXED HEIGHT & SPACING */
 
 #card {
   position: relative;
   isolation: isolate;
   width: 100%;
-  max-width: 500px;
-  min-height: 640px;
+  max-width: 520px;
+  min-height: 720px; /* Card ki length barha di hai taake sab kuch fit aaye */
   margin: 15px auto;
   overflow: hidden;
   text-align: center;
@@ -130,7 +130,7 @@ button {
     0 0 0 7px #9b702f,
     0 12px 35px #000;
 
-  padding: 24px 18px;
+  padding: 30px 20px;
 
   display: flex;
   flex-direction: column;
@@ -142,7 +142,7 @@ button {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 10px;
+  inset: 11px;
   border: 1px solid #d0a65e;
   box-shadow: inset 0 0 22px #bd914822;
   pointer-events: none;
@@ -168,8 +168,8 @@ button {
 
 .corner {
   position: absolute;
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
   opacity: .9;
   pointer-events: none;
 }
@@ -179,24 +179,24 @@ button {
   height: 100%;
 }
 
-.tl { top: 10px; left: 10px; }
-.tr { top: 10px; right: 10px; transform: scaleX(-1); }
-.bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
-.br { bottom: 10px; right: 10px; transform: scale(-1); }
+.tl { top: 12px; left: 12px; }
+.tr { top: 12px; right: 12px; transform: scaleX(-1); }
+.bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+.br { bottom: 12px; right: 12px; transform: scale(-1); }
 
 /* GOLDEN LEAVES */
 
 .laurel {
   position: absolute;
-  top: 25%;
-  width: 13px;
-  height: 45%;
-  opacity: .4;
+  top: 22%;
+  width: 14px;
+  height: 48%;
+  opacity: .45;
   pointer-events: none;
 }
 
-.left { left: 12px; }
-.right { right: 12px; transform: scaleX(-1); }
+.left { left: 14px; }
+.right { right: 14px; transform: scaleX(-1); }
 
 /* LOGO */
 
@@ -205,40 +205,39 @@ button {
   z-index: 1;
   width: 100%;
   text-align: center;
-  margin-bottom: 2px;
 }
 
 .emblem {
-  width: 75px;
+  width: 85px;
   height: auto;
-  max-height: 75px;
+  max-height: 85px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 4px;
+  margin: 0 auto 6px;
   filter: drop-shadow(0 0 8px #b78332aa);
 }
 
 .brand {
-  font: 700 28px Cinzel, serif;
-  letter-spacing: 5px;
+  font: 700 32px Cinzel, serif;
+  letter-spacing: 6px;
   color: #f2d18b;
   text-shadow: 0 2px 10px #9c6a26;
 }
 
 .subtitle {
-  font: 500 10px Cinzel, serif;
+  font: 500 11px Cinzel, serif;
   letter-spacing: 3px;
   color: #dcb66d;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 /* ORNAMENT */
 
 .ornament {
-  width: 65%;
-  height: 12px;
+  width: 70%;
+  height: 14px;
   flex-shrink: 0;
-  margin: 2px auto;
+  margin: 4px auto;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -260,27 +259,24 @@ button {
 /* CARD TEXT ELEMENTS */
 
 .customer {
-  font: italic 600 20px "Playfair Display", serif;
+  font: italic 600 22px "Playfair Display", serif;
   color: #fff4dc;
   text-shadow: 0 2px 6px rgba(180, 130, 50, 0.4);
-  margin: 2px 0;
 }
 
 .thanks {
-  font: 50px "Great Vibes", cursive;
+  font: 58px "Great Vibes", cursive;
   line-height: 1;
   color: #f3d48d;
   text-shadow: 0 3px 12px rgba(210, 150, 60, 0.5);
-  margin: 2px 0;
 }
 
 .message {
   width: 90%;
-  font: italic 13px/1.35 "Playfair Display", serif;
+  font: italic 14px/1.4 "Playfair Display", serif;
   color: #f7e9cc;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  margin: 2px auto;
 }
 
 .message b {
@@ -293,14 +289,13 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin: 4px auto;
-  padding: 6px 18px;
+  gap: 10px;
+  padding: 8px 22px;
   background: linear-gradient(135deg, rgba(35, 27, 18, 0.85), rgba(15, 11, 7, 0.95));
   border: 1.5px solid #f1d18a;
-  border-radius: 20px;
+  border-radius: 25px;
   position: relative;
-  font: italic 600 14px "Playfair Display", serif;
+  font: italic 600 15px "Playfair Display", serif;
   color: #fceecf;
   box-shadow: 
     inset 0 0 10px rgba(243, 211, 138, 0.2), 
@@ -313,45 +308,44 @@ button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 8px;
+  width: 10px;
   height: 70%;
   border-top: 2px solid #f5de9e;
   border-bottom: 2px solid #f5de9e;
 }
 
 .orderbox::before {
-  left: -5px;
+  left: -6px;
   border-left: 2px solid #f5de9e;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 
 .orderbox::after {
-  right: -5px;
+  right: -6px;
   border-right: 2px solid #f5de9e;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
 .bag-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   fill: url(#goldGradient);
 }
 
 .count {
-  font: 700 1.25em Cinzel, serif;
+  font: 700 1.3em Cinzel, serif;
   color: #ffffff;
   text-shadow: 0 0 8px #f5de9e;
-  margin-left: 3px;
+  margin-left: 4px;
 }
 
 /* FIXED GOLDEN RIBBON */
 
 .ribbon {
-  width: 88%;
-  padding: 8px 16px;
-  margin: 4px auto;
+  width: 90%;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,7 +353,7 @@ button {
   background: linear-gradient(90deg, #805018, #f3d38a 48%, #98621f);
   color: #1a1005;
   font-family: "Playfair Display", serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   font-style: italic;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -368,10 +362,9 @@ button {
 }
 
 .ending {
-  font: 600 13px/1.3 "Playfair Display", serif;
+  font: 600 14px/1.35 "Playfair Display", serif;
   color: #f4d995;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  margin-top: 2px;
 }
 </style>
 </head>
