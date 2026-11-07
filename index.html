@@ -12,267 +12,464 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-
-body{
- margin:0;
- padding:25px 12px;
- background:#100e0b;
- color:#f7e8c5;
- font-family:Arial,sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-h2{
- text-align:center;
- color:#e7c47c;
- font:600 23px Cinzel,serif;
- letter-spacing:2px;
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
-.panel{
- max-width:480px;
- margin:16px auto;
- background:#211b13;
- padding:20px;
- border:1px solid #a98243;
- border-radius:12px;
+body {
+  margin: 0;
+  padding: 25px 12px;
+  min-height: 100vh;
+  width: 100%;
+  background: #100e0b;
+  color: #f7e8c5;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.panel h3{
- color:#e8c77f;
- font-family:Cinzel,serif;
+h2 {
+  text-align: center;
+  color: #e7c47c;
+  font: 600 23px Cinzel, serif;
+  letter-spacing: 2px;
+  overflow-wrap: break-word;
 }
 
-label{
- display:block;
- color:#e9cc91;
- margin-top:10px;
+.panel {
+  width: 100%;
+  max-width: 480px;
+  margin: 16px auto;
+  background: #211b13;
+  padding: 20px;
+  border: 1px solid #a98243;
+  border-radius: 12px;
 }
 
-input{
- width:100%;
- padding:12px;
- margin:7px 0 12px;
- border:1px solid #a98243;
- border-radius:6px;
- background:#0e0c09;
- color:white;
- font-size:16px;
+.panel h3 {
+  color: #e8c77f;
+  font-family: Cinzel, serif;
 }
 
-button{
- padding:12px 15px;
- margin:5px 3px;
- border:1px solid #f1d38c;
- border-radius:6px;
- background:linear-gradient(110deg,#8c5b1d,#f4d58c,#a66d24);
- color:#1b1208;
- font-weight:bold;
- cursor:pointer;
+label {
+  display: block;
+  color: #e9cc91;
+  margin-top: 10px;
 }
 
-#app{display:none}
-
-#status,#loginStatus{
- text-align:center;
- color:#f1d18a;
- overflow-wrap:anywhere;
+input {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  margin: 7px 0 12px;
+  border: 1px solid #a98243;
+  border-radius: 6px;
+  background: #0e0c09;
+  color: white;
+  font-size: 16px;
 }
 
-/* THANK YOU CARD */
-
-#card{
- position:relative;
- isolation:isolate;
- width:min(100%,580px);
- aspect-ratio:1170/1280;
- margin:25px auto;
- overflow:hidden;
- text-align:center;
- color:#f8e8c5;
-
- background:
- radial-gradient(
- ellipse at 50% 42%,
- #292016 0%,
- #15110c 42%,
- #080706 78%,
- #020202 100%
- );
-
- border:3px solid #bd9148;
- box-shadow:
- 0 0 0 5px #17110a,
- 0 0 0 7px #9b702f,
- 0 12px 35px #000;
-
- padding:3.5% 6%;
-
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:space-around;
+button {
+  padding: 12px 15px;
+  margin: 5px 3px;
+  border: 1px solid #f1d38c;
+  border-radius: 6px;
+  background: linear-gradient(110deg,#8c5b1d,#f4d58c,#a66d24);
+  color: #1b1208;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-#card:before{
- content:"";
- position:absolute;
- z-index:-1;
- inset:11px;
- border:1px solid #d0a65e;
- box-shadow:inset 0 0 22px #bd914822;
+button:active {
+  transform: scale(.97);
 }
 
-#card:after{
- content:"";
- position:absolute;
- z-index:-1;
- inset:0;
- opacity:.22;
- background-image:
- repeating-linear-gradient(
- 105deg,transparent 0 7px,
- #c9a35b0b 8px 9px,transparent 10px 16px);
- pointer-events:none;
+#app {
+  display: none;
 }
 
-/* GOLDEN CORNERS */
-
-.corner{
- position:absolute;
- width:82px;
- height:82px;
- opacity:.9;
- pointer-events:none;
+#status, #loginStatus {
+  text-align: center;
+  color: #f1d18a;
+  overflow-wrap: anywhere;
 }
 
-.corner svg{
- width:100%;
- height:100%;
+/* CARD */
+
+#card {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 580px);
+  aspect-ratio: 1170 / 1280;
+  margin: 25px auto;
+  overflow: hidden;
+  text-align: center;
+  color: #f8e8c5;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      #292016 0%,
+      #15110c 42%,
+      #080706 78%,
+      #020202 100%
+    );
+
+  border: 3px solid #bd9148;
+
+  box-shadow:
+    0 0 0 5px #17110a,
+    0 0 0 7px #9b702f,
+    0 12px 35px #000;
+
+  padding: 3.5% 6%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.tl{top:13px;left:13px}
-.tr{top:13px;right:13px;transform:scaleX(-1)}
-.bl{bottom:13px;left:13px;transform:scaleY(-1)}
-.br{bottom:13px;right:13px;transform:scale(-1)}
-
-/* GOLDEN LEAVES */
-
-.laurel{
- position:absolute;
- top:24%;
- width:15%;
- height:43%;
- opacity:.48;
- pointer-events:none;
+#card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 11px;
+  border: 1px solid #d0a65e;
+  box-shadow: inset 0 0 22px #bd914822;
+  pointer-events: none;
 }
 
-.left{left:1.5%}
-.right{right:1.5%;transform:scaleX(-1)}
-
-.brandblock{
- position:relative;
- z-index:1;
- width:100%;
+#card:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .22;
+  background-image:
+    repeating-linear-gradient(
+      105deg,
+      transparent 0 7px,
+      #c9a35b0b 8px 9px,
+      transparent 10px 16px
+    );
+  pointer-events: none;
 }
 
-/* ORIGINAL LOGO */
+/* CORNERS */
 
-.emblem{
- width:clamp(90px,22vw,135px);
- height:90px;
- object-fit:contain;
- object-position:center;
- display:block;
- margin:0 auto 8px;
- filter:drop-shadow(0 0 8px #b78332aa);
+.corner {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  opacity: .9;
+  pointer-events: none;
 }
 
-.brand{
- font:700 clamp(27px,7vw,48px) Cinzel,serif;
- letter-spacing:clamp(4px,1vw,8px);
- color:#f2d18b;
- text-shadow:0 2px 10px #9c6a26;
+.corner svg {
+  width: 100%;
+  height: 100%;
 }
 
-.subtitle{
- font:500 clamp(9px,2.4vw,14px) Cinzel,serif;
- letter-spacing:clamp(3px,.8vw,5px);
- color:#dcb66d;
- margin-top:2px;
+.tl { top: 13px; left: 13px; }
+.tr { top: 13px; right: 13px; transform: scaleX(-1); }
+.bl { bottom: 13px; left: 13px; transform: scaleY(-1); }
+.br { bottom: 13px; right: 13px; transform: scale(-1); }
+
+/* LEAVES */
+
+.laurel {
+  position: absolute;
+  top: 24%;
+  width: 15%;
+  height: 43%;
+  opacity: .48;
+  pointer-events: none;
 }
 
-.ornament{
- width:76%;
- height:17px;
- margin:0 auto;
- display:flex;
- align-items:center;
- gap:9px;
- color:#d7ad63;
+.left { left: 1.5%; }
+.right { right: 1.5%; transform: scaleX(-1); }
+
+/* LOGO */
+
+.brandblock {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
 }
 
-.ornament:before,.ornament:after{
- content:"";
- height:1px;
- flex:1;
- background:linear-gradient(90deg,transparent,#d9b46e);
+.emblem {
+  width: clamp(75px, 22vw, 135px);
+  height: auto;
+  max-height: 110px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto 8px;
+  filter: drop-shadow(0 0 8px #b78332aa);
 }
 
-.ornament:after{transform:scaleX(-1)}
-
-.customer{
- font:italic clamp(19px,5vw,34px) "Playfair Display",serif;
- color:#fff0d2;
+.brand {
+  font: 700 clamp(27px, 7vw, 48px) Cinzel, serif;
+  letter-spacing: clamp(4px, 1vw, 8px);
+  color: #f2d18b;
+  text-shadow: 0 2px 10px #9c6a26;
+  overflow-wrap: anywhere;
 }
 
-.thanks{
- font:clamp(48px,12vw,83px) "Great Vibes",cursive;
- line-height:1.08;
- color:#edc574;
- text-shadow:0 3px 10px #9c651e;
+.subtitle {
+  font: 500 clamp(9px, 2.4vw, 14px) Cinzel, serif;
+  letter-spacing: clamp(3px, .8vw, 5px);
+  color: #dcb66d;
+  margin-top: 2px;
 }
 
-.message{
- font:italic clamp(12px,3.2vw,20px)/1.45 "Playfair Display",serif;
- color:#f1e1c3;
- max-width:90%;
+/* ORNAMENT */
+
+.ornament {
+  width: 76%;
+  height: 17px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #d7ad63;
 }
 
-.message b{color:#f2ca79}
-
-.orderbox{
- width:82%;
- border-top:1px solid #b58a47;
- border-bottom:1px solid #b58a47;
- padding:9px 4px;
- font:italic clamp(13px,3.5vw,22px) "Playfair Display",serif;
- color:#f2d18b;
+.ornament:before,
+.ornament:after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #d9b46e);
 }
 
-.count{
- font:600 1.25em Cinzel,serif;
- color:#ffe0a0;
- margin-left:5px;
+.ornament:after {
+  transform: scaleX(-1);
 }
 
-.ribbon{
- width:90%;
- padding:10px 8px;
- background:linear-gradient(90deg,#805018,#f3d38a 48%,#98621f);
- color:#211507;
- font:600 italic clamp(14px,3.7vw,23px) "Playfair Display",serif;
- clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);
+/* TEXT */
+
+.customer {
+  max-width: 100%;
+  font: italic clamp(19px, 5vw, 34px) "Playfair Display", serif;
+  color: #fff0d2;
+  overflow-wrap: anywhere;
 }
 
-.ending{
- font:clamp(15px,4vw,24px)/1.35 "Playfair Display",serif;
- color:#eac77e;
+.thanks {
+  font: clamp(48px, 12vw, 83px) "Great Vibes", cursive;
+  line-height: 1.08;
+  color: #edc574;
+  text-shadow: 0 3px 10px #9c651e;
 }
 
-@media(max-width:390px){
- .corner{width:60px;height:60px}
- #card{padding-left:5%;padding-right:5%}
+.message {
+  display: block;
+  width: 100%;
+  max-width: 90%;
+  padding: 0 5px;
+  font: italic clamp(12px, 3.2vw, 20px)/1.45 "Playfair Display", serif;
+  color: #f1e1c3;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.message b {
+  color: #f2ca79;
+}
+
+.orderbox {
+  width: 82%;
+  border-top: 1px solid #b58a47;
+  border-bottom: 1px solid #b58a47;
+  padding: 9px 4px;
+  font: italic clamp(13px, 3.5vw, 22px) "Playfair Display", serif;
+  color: #f2d18b;
+}
+
+.count {
+  font: 600 1.25em Cinzel, serif;
+  color: #ffe0a0;
+  margin-left: 5px;
+}
+
+.ribbon {
+  width: 90%;
+  padding: 10px 8px;
+  background: linear-gradient(90deg,#805018,#f3d38a 48%,#98621f);
+  color: #211507;
+  font: 600 italic clamp(14px, 3.7vw, 23px) "Playfair Display", serif;
+  clip-path: polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%);
+  overflow-wrap: break-word;
+}
+
+.ending {
+  font: clamp(15px, 4vw, 24px)/1.35 "Playfair Display", serif;
+  color: #eac77e;
+}
+
+/* TABLETS */
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px 8px;
+  }
+
+  #card {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .corner {
+    width: 65px;
+    height: 65px;
+  }
+
+  .laurel {
+    opacity: .35;
+  }
+
+  .message {
+    max-width: 94%;
+    font-size: clamp(12px, 3.2vw, 17px);
+    line-height: 1.4;
+  }
+
+  .ribbon {
+    width: 92%;
+    padding: 8px 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 390px) {
+  body {
+    padding: 10px 6px;
+  }
+
+  h2 {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .panel {
+    padding: 15px;
+  }
+
+  #card {
+    width: 100%;
+    padding: 4% 4%;
+    border-width: 2px;
+  }
+
+  #card:before {
+    inset: 8px;
+  }
+
+  .corner {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tl { top: 9px; left: 9px; }
+  .tr { top: 9px; right: 9px; }
+  .bl { bottom: 9px; left: 9px; }
+  .br { bottom: 9px; right: 9px; }
+
+  .emblem {
+    width: 72px;
+    max-height: 75px;
+    margin-bottom: 4px;
+  }
+
+  .brand {
+    font-size: clamp(23px, 7vw, 30px);
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .laurel {
+    opacity: .22;
+    width: 12%;
+  }
+
+  .customer {
+    font-size: clamp(17px, 5vw, 23px);
+  }
+
+  .thanks {
+    font-size: clamp(42px, 12vw, 57px);
+  }
+
+  .message {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 8px;
+    font-size: clamp(11px, 3.4vw, 13px);
+    line-height: 1.4;
+  }
+
+  .orderbox {
+    width: 88%;
+    font-size: 13px;
+    padding: 7px 3px;
+  }
+
+  .ribbon {
+    width: 94%;
+    font-size: clamp(12px, 3.8vw, 15px);
+    padding: 8px 13px;
+  }
+
+  .ending {
+    font-size: 15px;
+  }
+
+  .ornament {
+    height: 12px;
+  }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 340px) {
+  #card {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .message {
+    font-size: 11px;
+  }
+
+  .corner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ribbon {
+    font-size: 11px;
+  }
+
+  .thanks {
+    font-size: 40px;
+  }
 }
 </style>
 </head>
@@ -284,166 +481,163 @@ button{
 <!-- ADMIN LOGIN -->
 
 <div class="panel" id="login">
+  <h3>Private Admin Login</h3>
 
-<h3>Private Admin Login</h3>
+  <label>Email</label>
+  <input id="email" type="email" placeholder="Your email">
 
-<label>Email</label>
-<input id="email" type="email" placeholder="Your email">
+  <label>Password</label>
+  <input id="password" type="password" placeholder="Your password">
 
-<label>Password</label>
-<input id="password" type="password" placeholder="Your password">
+  <button onclick="login()">Login</button>
 
-<button onclick="login()">Login</button>
-
-<p id="loginStatus"></p>
-
+  <p id="loginStatus"></p>
 </div>
 
 <!-- ADMIN PANEL -->
 
 <div id="app">
 
-<div class="panel">
+  <div class="panel">
+    <h3>Edit Customer Card</h3>
 
-<h3>Edit Customer Card</h3>
+    <label>Customer Name</label>
+    <input id="customer" value="Mr. Ahmed">
 
-<label>Customer Name</label>
-<input id="customer" value="Mr. Ahmed">
+    <label>Order Word</label>
+    <input id="word" value="another">
 
-<label>Order Word</label>
-<input id="word" value="another">
+    <label>Total Orders</label>
+    <input id="orders" type="number" min="1" value="5">
 
-<label>Total Orders</label>
-<input id="orders" type="number" min="1" value="5">
+    <button onclick="updateCard()">Update Preview</button>
+    <button onclick="saveCard()">Save to Database</button>
+    <button onclick="downloadCard()">Download PNG</button>
+    <button onclick="shareCard()">Share Card</button>
+    <button onclick="logout()">Logout</button>
 
-<button onclick="updateCard()">Update Preview</button>
-<button onclick="saveCard()">Save to Database</button>
-<button onclick="downloadCard()">Download PNG</button>
-<button onclick="shareCard()">Share Card</button>
-<button onclick="logout()">Logout</button>
+    <p id="status"></p>
+  </div>
 
-<p id="status"></p>
+  <!-- CARD DESIGN -->
 
-</div>
+  <div id="card">
 
-<!-- CARD DESIGN -->
+    <!-- CORNERS -->
 
-<div id="card">
+    <div class="corner tl">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
+        <path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
+        <path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
+      </svg>
+    </div>
 
-<!-- CORNER DECORATION -->
+    <div class="corner tr">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
+        <path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
+        <path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
+      </svg>
+    </div>
 
-<div class="corner tl">
-<svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
-<path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
-<path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
-</svg>
-</div>
+    <div class="corner bl">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
+        <path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
+        <path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
+      </svg>
+    </div>
 
-<div class="corner tr">
-<svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
-<path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
-<path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
-</svg>
-</div>
+    <div class="corner br">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
+        <path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
+        <path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
+      </svg>
+    </div>
 
-<div class="corner bl">
-<svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
-<path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
-<path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
-</svg>
-</div>
+    <!-- LEFT LEAVES -->
 
-<div class="corner br">
-<svg viewBox="0 0 100 100" fill="none" stroke="#d6ad65" stroke-width="1.5">
-<path d="M5 95V5h90M5 35Q25 35 25 5M5 55Q45 55 45 5M5 75Q65 75 65 5"/>
-<path d="M25 95Q25 75 5 75M45 95Q45 55 5 55M65 95Q65 35 5 35"/>
-</svg>
-</div>
+    <svg class="laurel left" viewBox="0 0 100 300" fill="none" stroke="#c69a50" stroke-width="2">
+      <path d="M75 290Q15 150 65 10"/>
+      <g fill="#c69a50">
+        <path d="M65 35Q20 12 28 55Q52 58 65 35"/>
+        <path d="M55 72Q10 55 18 98Q43 100 55 72"/>
+        <path d="M47 112Q4 100 12 140Q36 143 47 112"/>
+        <path d="M42 155Q0 150 12 187Q34 185 42 155"/>
+        <path d="M43 198Q4 198 22 232Q43 227 43 198"/>
+        <path d="M55 238Q20 250 48 276Q66 260 55 238"/>
+      </g>
+    </svg>
 
-<!-- LEFT LEAVES -->
+    <!-- RIGHT LEAVES -->
 
-<svg class="laurel left" viewBox="0 0 100 300" fill="none" stroke="#c69a50" stroke-width="2">
-<path d="M75 290Q15 150 65 10"/>
-<g fill="#c69a50">
-<path d="M65 35Q20 12 28 55Q52 58 65 35"/>
-<path d="M55 72Q10 55 18 98Q43 100 55 72"/>
-<path d="M47 112Q4 100 12 140Q36 143 47 112"/>
-<path d="M42 155Q0 150 12 187Q34 185 42 155"/>
-<path d="M43 198Q4 198 22 232Q43 227 43 198"/>
-<path d="M55 238Q20 250 48 276Q66 260 55 238"/>
-</g>
-</svg>
+    <svg class="laurel right" viewBox="0 0 100 300" fill="none" stroke="#c69a50" stroke-width="2">
+      <path d="M75 290Q15 150 65 10"/>
+      <g fill="#c69a50">
+        <path d="M65 35Q20 12 28 55Q52 58 65 35"/>
+        <path d="M55 72Q10 55 18 98Q43 100 55 72"/>
+        <path d="M47 112Q4 100 12 140Q36 143 47 112"/>
+        <path d="M42 155Q0 150 12 187Q34 185 42 155"/>
+        <path d="M43 198Q4 198 22 232Q43 227 43 198"/>
+        <path d="M55 238Q20 250 48 276Q66 260 55 238"/>
+      </g>
+    </svg>
 
-<!-- RIGHT LEAVES -->
+    <!-- ORIGINAL VEYORA LOGO -->
 
-<svg class="laurel right" viewBox="0 0 100 300" fill="none" stroke="#c69a50" stroke-width="2">
-<path d="M75 290Q15 150 65 10"/>
-<g fill="#c69a50">
-<path d="M65 35Q20 12 28 55Q52 58 65 35"/>
-<path d="M55 72Q10 55 18 98Q43 100 55 72"/>
-<path d="M47 112Q4 100 12 140Q36 143 47 112"/>
-<path d="M42 155Q0 150 12 187Q34 185 42 155"/>
-<path d="M43 198Q4 198 22 232Q43 227 43 198"/>
-<path d="M55 238Q20 250 48 276Q66 260 55 238"/>
-</g>
-</svg>
+    <div class="brandblock">
 
-<!-- YOUR ORIGINAL VEYORA LOGO -->
+      <img
+        src="WhatsApp%20Image%202026-10-04%20at%2010.21.20%20PM.jpeg"
+        class="emblem"
+        alt="VEYORA Original Logo"
+        crossorigin="anonymous"
+      >
 
-<div class="brandblock">
+      <div class="brand">VEYORA</div>
+      <div class="subtitle">— MAYU WORLD —</div>
 
-<img
-src="WhatsApp%20Image%202026-10-04%20at%2010.21.20%20PM.jpeg"
-class="emblem"
-alt="VEYORA Original Logo"
->
+    </div>
 
-<div class="brand">VEYORA</div>
-<div class="subtitle">— MAYU WORLD —</div>
+    <div class="ornament"><span>✦</span></div>
 
-</div>
+    <div class="customer" id="previewName">
+      Dear Mr. Ahmed
+    </div>
 
-<div class="ornament"><span>✦</span></div>
+    <div class="ornament"><span>❧</span></div>
 
-<div class="customer" id="previewName">
-Dear Mr. Ahmed
-</div>
+    <div class="thanks">Thank You!</div>
 
-<div class="ornament"><span>❧</span></div>
+    <div class="message">
+      for placing <b id="previewWord">another</b> order with Veyora!
+    </div>
 
-<div class="thanks">Thank You!</div>
+    <div class="orderbox">
+      Your Total Orders:
+      <span class="count" id="previewOrders">5</span>
+    </div>
 
-<div class="message">
-for placing <b id="previewWord">another</b> order with Veyora!
-</div>
+    <div class="message">
+      Your trust and support mean a lot to us.<br>
+      We truly appreciate having you<br>
+      as part of the Veyora family.
+    </div>
 
-<div class="orderbox">
-Your Total Orders:
-<span class="count" id="previewOrders">5</span>
-</div>
+    <div class="ribbon">
+      We are truly grateful to you!
+    </div>
 
-<div class="message">
-Your trust and support mean a lot to us.<br>
-We truly appreciate having you<br>
-as part of the Veyora family.
-</div>
+    <div class="ending">
+      ♡<br>
+      With Love,<br>
+      <b>Team Veyora ♥</b>
+    </div>
 
-<div class="ribbon">
-We are truly grateful to you!
-</div>
-
-<div class="ending">
-♡<br>
-With Love,<br>
-<b>Team Veyora ♥</b>
-</div>
-
-</div>
+  </div>
 </div>
 
 <script>
 
-// YOUR EXISTING SUPABASE SETTINGS
+// SUPABASE SETTINGS
 
 const SUPABASE_URL =
 "https://equvzrewhfdehksmquhg.supabase.co";
@@ -452,8 +646,8 @@ const SUPABASE_KEY =
 "sb_publishable_zkSKYvb3oKyHGXjMurHUpA_cfYo1kpD";
 
 const db = window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
+  SUPABASE_URL,
+  SUPABASE_KEY
 );
 
 let currentUser = null;
@@ -461,207 +655,251 @@ let currentUser = null;
 
 // LOGIN
 
-async function login(){
+async function login() {
 
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-const result = await db.auth.signInWithPassword({
-email,
-password
-});
+  const result = await db.auth.signInWithPassword({
+    email,
+    password
+  });
 
-if(result.error){
+  if (result.error) {
+    document.getElementById("loginStatus").textContent =
+      result.error.message;
+    return;
+  }
 
-document.getElementById("loginStatus").textContent =
-result.error.message;
+  currentUser = result.data.user;
 
-return;
-}
+  document.getElementById("login").style.display = "none";
+  document.getElementById("app").style.display = "block";
 
-currentUser = result.data.user;
-
-document.getElementById("login").style.display = "none";
-document.getElementById("app").style.display = "block";
-
-updateCard();
-
+  updateCard();
 }
 
 
 // LOGOUT
 
-async function logout(){
+async function logout() {
 
-await db.auth.signOut();
+  await db.auth.signOut();
 
-currentUser = null;
+  currentUser = null;
 
-document.getElementById("app").style.display = "none";
-document.getElementById("login").style.display = "block";
-
+  document.getElementById("app").style.display = "none";
+  document.getElementById("login").style.display = "block";
 }
 
 
 // UPDATE CARD
 
-function updateCard(){
+function updateCard() {
 
-const name = document.getElementById("customer").value.trim();
-const word = document.getElementById("word").value.trim();
-const orders = document.getElementById("orders").value;
+  const name = document.getElementById("customer").value.trim();
+  const word = document.getElementById("word").value.trim();
+  const orders = document.getElementById("orders").value;
 
-document.getElementById("previewName").textContent =
-"Dear " + (name || "Customer");
+  document.getElementById("previewName").textContent =
+    "Dear " + (name || "Customer");
 
-document.getElementById("previewWord").textContent =
-word || "another";
+  document.getElementById("previewWord").textContent =
+    word || "another";
 
-document.getElementById("previewOrders").textContent =
-orders || "1";
-
+  document.getElementById("previewOrders").textContent =
+    orders || "1";
 }
 
 
 // SAVE TO DATABASE
 
-async function saveCard(){
+async function saveCard() {
 
-if(!currentUser){
+  if (!currentUser) {
+    document.getElementById("status").textContent =
+      "Please log in again.";
+    return;
+  }
 
-document.getElementById("status").textContent =
-"Please log in again.";
+  const customer_name =
+    document.getElementById("customer").value.trim();
 
-return;
-}
+  const order_word =
+    document.getElementById("word").value.trim();
 
-const customer_name =
-document.getElementById("customer").value.trim();
+  const total_orders =
+    Number(document.getElementById("orders").value);
 
-const order_word =
-document.getElementById("word").value.trim();
+  if (
+    !customer_name ||
+    !order_word ||
+    !Number.isInteger(total_orders) ||
+    total_orders < 1
+  ) {
+    document.getElementById("status").textContent =
+      "Please enter valid details.";
+    return;
+  }
 
-const total_orders =
-Number(document.getElementById("orders").value);
+  const { error } = await db
+    .from("thank_you_cards")
+    .insert({
+      owner_id: currentUser.id,
+      customer_name,
+      order_word,
+      total_orders
+    });
 
-if(!customer_name || !order_word ||
-!Number.isInteger(total_orders) || total_orders < 1){
-
-document.getElementById("status").textContent =
-"Please enter valid details.";
-
-return;
-}
-
-const {error} = await db
-.from("thank_you_cards")
-.insert({
-owner_id:currentUser.id,
-customer_name,
-order_word,
-total_orders
-});
-
-document.getElementById("status").textContent =
-error ? error.message : "Card saved successfully!";
-
+  document.getElementById("status").textContent =
+    error ? error.message : "Card saved successfully!";
 }
 
 
 // CREATE PNG
 
-async function makeImage(){
+async function makeImage() {
 
-updateCard();
+  updateCard();
 
-const canvas = await html2canvas(
-document.getElementById("card"),
-{
-scale:2,
-backgroundColor:"#080706",
-useCORS:true
-}
-);
+  const card = document.getElementById("card");
 
-return new Promise(resolve=>{
-canvas.toBlob(resolve,"image/png");
-});
+  // Wait for logo and fonts before taking screenshot
 
+  await document.fonts.ready;
+
+  const images = Array.from(card.querySelectorAll("img"));
+
+  await Promise.all(
+    images.map(img => {
+      if (img.complete) return Promise.resolve();
+
+      return new Promise(resolve => {
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    })
+  );
+
+  const canvas = await html2canvas(card, {
+    scale: 2,
+    backgroundColor: "#080706",
+    useCORS: true,
+    logging: false
+  });
+
+  return new Promise(resolve => {
+    canvas.toBlob(resolve, "image/png");
+  });
 }
 
 
 // DOWNLOAD PNG
 
-async function downloadCard(){
+async function downloadCard() {
 
-const blob = await makeImage();
+  try {
 
-if(!blob){
-document.getElementById("status").textContent =
-"PNG could not be created.";
-return;
-}
+    const blob = await makeImage();
 
-const url = URL.createObjectURL(blob);
+    if (!blob) {
+      document.getElementById("status").textContent =
+        "PNG could not be created.";
+      return;
+    }
 
-const a = document.createElement("a");
+    const url = URL.createObjectURL(blob);
 
-a.href = url;
-a.download = "Veyora-Thank-You.png";
+    const a = document.createElement("a");
 
-a.click();
+    a.href = url;
+    a.download = "Veyora-Thank-You.png";
 
-setTimeout(()=>{
-URL.revokeObjectURL(url);
-},1000);
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+    }, 2000);
+
+    document.getElementById("status").textContent =
+      "PNG downloaded successfully!";
+
+  } catch (error) {
+
+    document.getElementById("status").textContent =
+      "Download error: " + error.message;
+
+  }
 }
 
 
 // WHATSAPP SHARE
 
-async function shareCard(){
+async function shareCard() {
 
-const blob = await makeImage();
+  try {
 
-if(!blob){
-document.getElementById("status").textContent =
-"PNG could not be created.";
-return;
-}
+    const blob = await makeImage();
 
-const file = new File(
-[blob],
-"Veyora-Thank-You.png",
-{type:"image/png"}
-);
+    if (!blob) {
+      document.getElementById("status").textContent =
+        "PNG could not be created.";
+      return;
+    }
 
-if(
-navigator.canShare &&
-navigator.canShare({files:[file]})
-){
+    const file = new File(
+      [blob],
+      "Veyora-Thank-You.png",
+      { type: "image/png" }
+    );
 
-await navigator.share({
-files:[file],
-title:"Thank You from Veyora",
-text:"With love, Team Veyora"
-});
+    if (
+      navigator.canShare &&
+      navigator.canShare({ files: [file] })
+    ) {
 
-}else{
+      await navigator.share({
+        files: [file],
+        title: "Thank You from Veyora",
+        text: "With love, Team Veyora"
+      });
 
-await downloadCard();
+    } else {
 
-window.open(
-"https://wa.me/?text=" +
-encodeURIComponent("Thank you for shopping with Veyora! ❤️"),
-"_blank"
-);
+      const url = URL.createObjectURL(blob);
 
-document.getElementById("status").textContent =
-"PNG downloaded. Attach it in WhatsApp to send the card.";
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Veyora-Thank-You.png";
 
-}
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
 
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+      }, 2000);
+
+      window.open(
+        "https://wa.me/?text=" +
+        encodeURIComponent("Thank you for shopping with Veyora! ❤️"),
+        "_blank"
+      );
+
+      document.getElementById("status").textContent =
+        "PNG downloaded. Attach it in WhatsApp to send the card.";
+    }
+
+  } catch (error) {
+
+    if (error.name !== "AbortError") {
+      document.getElementById("status").textContent =
+        "Share error: " + error.message;
+    }
+
+  }
 }
 
 </script>
